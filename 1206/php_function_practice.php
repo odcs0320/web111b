@@ -23,8 +23,8 @@
 
 <body style="text-align: center">
   <form action="function.php" method="post" id="form">
-    請輸入飲食時段:<input type="text" name="a"><br>
-    請輸入食物內容:<input type="text" name="b"><br>
+    請輸入飲食時段:<input type="text" required name="a"><br>
+    請輸入食物內容:<input type="text" required name="b"><br>
     <input type="submit" value="送出">
   </form>
   <div class="welcome"></div>
