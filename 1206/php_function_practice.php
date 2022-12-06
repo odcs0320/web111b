@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome!!</title>
+  <title>今天吃什麼?</title>
 
   <style>
   div.welcome {
@@ -22,8 +22,9 @@
 </head>
 
 <body style="text-align: center">
-  <form action="test.php" method="post" id="form">
-    請輸入列(row)數:<input type="text" name="urow"><br>
+  <form action="function.php" method="post" id="form">
+    請輸入飲食時段:<input type="text" name="a"><br>
+    請輸入食物內容:<input type="text" name="b"><br>
     <input type="submit" value="送出">
   </form>
   <div class="welcome"></div>
@@ -34,20 +35,12 @@
 
 <?php
 
-if (isset($_POST['urow']) && !empty($_POST['urow'])
+if (isset($_POST['a']) && isset($_POST['b'])
 ) {
 
-    $row = $_POST['urow'];
+    $a = $_POST['a'];
+    $b = $_POST['b'];
 
-    for ($i = 0; $i <= $row; $i++) {
-
-        // for ($j = $row; $j > $i; $j--) {
-        for ($j = 0; $j <= $row - $i; $j++) {
-            echo "*";
-        }
-        echo "<br>";
-    }
-
-} else {
-    echo "<div class='error'>請輸入列數</div>";
+} else if (!empty($_POST['a']) || !empty($_POST['b'])) {
+    echo "<div class='error'>請輸入完整內容</div>";
 }
