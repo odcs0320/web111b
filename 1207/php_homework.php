@@ -23,16 +23,25 @@
 
 <body style="text-align: center">
   <form action="php_homework.php" method="post" id="form">
+
     <!--請輸入正方形邊長:<input type="number" placeholder="請輸入正方形邊長" required name="num">
     請輸入正方形樣式:<input type="text" placeholder="請輸入正方形樣式" required name="type">
     <input type="submit" value="產生"><br>-->
+
     <!--請輸入身高(cm):<input type="number" placeholder="請輸入身高(cm)" required name="cm">
     請輸入體重(kg):<input type="number" placeholder="請輸入體重(kg)" required name="kg">
     <input type="submit" value="轉換"><br>-->
+
     <!--請輸入一整數判斷其奇偶:<input type="number" placeholder="請輸入一整數判斷其奇偶" required name="int">
     <input type="submit" value="判斷"><br>-->
-    請輸入一串數字:<input type="number" placeholder="請輸入一串數字" required name="number">
-    <input type="submit" value="拆解"><br>
+
+    <!--請輸入一串數字:<input type="number" placeholder="請輸入一串數字" required name="number">
+    <input type="submit" value="拆解"><br>-->
+
+    請輸入寬度:<input type="number" placeholder="請輸入寬度" required name="w">
+    請輸入高度:<input type="number" placeholder="請輸入高度" required name="h">
+    <input type="submit" value="產生"><br>
+
   </form>
   <div class="square"></div>
   <div class="error"></div>
@@ -107,18 +116,52 @@ even($int);
 echo "<div class='error'>請輸入一整數判斷其奇偶</div>";
 }*/
 
-if (isset($_POST['number']) && !empty($_POST['number'])) {
+/*if (isset($_POST['number']) && !empty($_POST['number'])) {
 
 // 代入指定的變數
-    $number = $_POST['number'];
+$number = $_POST['number'];
 
-    function decomp($number)
-    {
+function decomp(int $number)
+{
+// 將數字轉換為字串
+$str = (string) $number;
 
-    }
+// 將字串中的每個字元分開
+$chars = str_split($str);
 
-    decomp($number);
+// 將每個字元都輸出，並在其中插入空格
+foreach ($chars as $char) {
+echo $char . " ";
+}
+
+}
+
+decomp($number);
 
 } else {
-    echo "<div class='error'>請輸入一串數字</div>";
+echo "<div class='error'>請輸入一串數字</div>";
+}*/
+
+/*if (isset($_POST['w']) && !empty($_POST['w'])
+|| isset($_POST['h']) && !empty($_POST['h'])) {
+
+// 代入指定的變數
+$w = $_POST['w'];
+$h = $_POST['h'];
+
+echo "11";
+
+function F($w, $h)
+{
+echo "11";
+
+for ($i = 1; $i <= $h; $i++) {
+for ($j = 1; $j <= $w; $j++) {
+//echo $i * $j . ' ';
+echo "11";
 }
+echo "\n";
+}
+}
+
+}*/
