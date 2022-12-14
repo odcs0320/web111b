@@ -1,4 +1,5 @@
 <?php
+namespace myabstract\pay;
 
 //父類別
 class Payroll
