@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表單系統</title>
+</head>
+
+<body>
+  <form action="#" method="post">
+    <h1>表單系統</h1>
+    <p>請留下個人資料</p>
+    <label id="user" name="user">姓名:</label><input type="text" name="user"><br>
+    <label id="tel" name="tel">電話:</label><input type="tel" name="tel"><br>
+    <label id="mail" name="mail">郵件:</label><input type="email" name="mail"><br>
+    <label id="url" name="url">網址:</label><input type="url" name="url"><br>
+
+    <p>性別</p>
+    <input type="radio" name="sex" value="1">男性
+    <input type="radio" name="sex" value="0">女性
+
+    <p>年齡層分析</p>
+    <select name="age">
+      <option value="1">小於20歲</option>
+      <option value="2">20~40歲</option>
+      <option value="3">41~60歲</option>
+      <option value="4">大於60歲</option>
+    </select>
+
+    <fieldset>
+      <legend>你會下列哪些軟體能力</legend>
+      <input type="checkbox" name="software[]" value="html">HTML
+      <input type="checkbox" name="software[]" value="css">CSS
+      <input type="checkbox" name="software[]" value="js">JaveScript
+      <input type="checkbox" name="software[]" value="php">PHP
+      <input type="checkbox" name="software[]" value="jquery">jQuery
+    </fieldset>
+
+    <p>意見回饋</p>
+    <textarea name="sugestion" cols="30" rows="5"></textarea>
+
+    <p>
+      <input type="submit" value="確認">&emsp;&emsp;<input type="reset" value="取消">
+    </p>
+
+  </form>
+
+</body>
+
+</html>
