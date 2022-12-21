@@ -9,14 +9,25 @@
 </head>
 
 <body>
-  <h1>跨平台網頁程式設計班</h1>
-  <fieldset>
-    <a href="front.php" target="_blank" title="網頁前端">網頁前端</a><br>
-    <a href="backend.php" target="_blank" title="網頁後端">網頁後端</a><br>
-    <a href="db.php" target="_blank" title="資料庫">資料庫</a><br>
-    <a href="vc.php" target="_blank" title="版本控管">版本控管</a><br>
-    <a href="contact.php" target="_blank" title="與我聯絡">與我聯絡</a><br>
-  </fieldset>
+
+
+  <div class="container">
+
+    <h1 style="color: blue; background-color: skyblue;">跨平台網頁程式設計班
+
+    </h1>
+
+    <a href="front.php" title="網頁前端" style="font-size: large;">網頁前端</a>
+    <a href="backend.php" title="網頁後端" style="font-size: large;">網頁後端</a>
+    <a href="db.php" title="資料庫" style="font-size: large;">資料庫</a>
+    <a href="vc.php" title="版本控管" style="font-size: large;">版本控管</a>
+    <a href="contact.php" title="與我聯絡" style="font-size: large;">與我聯絡</a>
+  </div>
+
+
+
+  <!--<img src="https://source.unsplash.com/random/1280x800" alt="">-->
+
 </body>
 
 </html>
