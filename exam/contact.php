@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <form name="form1" action="http://web111b.com:6080/exam/contact.php" method="get">
+  <form name="form1" action="http://web111b.com:6080/exam/contact.php" method="get" id="login_form">
     <fieldset>
 
       <h1>聯絡表單</h1>
@@ -41,6 +41,7 @@ if (isset($_GET['user']) && isset($_GET['tel']) && isset($_GET['sugestion'])
     $sugestion = $_GET["sugestion"];
 
     echo "姓名:{$user} <br> 電話:{$tel} <br> 意見:{$sugestion}";
+    echo "<script>document.getElementById('login_form').style.display = 'none'</script> <br>";
 
 }
 
