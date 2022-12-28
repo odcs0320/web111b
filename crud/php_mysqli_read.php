@@ -1,5 +1,16 @@
 <?php
 
+echo "<script>
+function delall() {
+  console.log('delall')
+  if (confirm('\\n是否確定要刪除這筆資料?\\n刪除後無法恢復喔!\\n')) {
+    form1.submit();
+  }
+  return false;
+}
+</script>
+";
+
 echo "
    <style>
      table,td{
@@ -32,9 +43,17 @@ $sql = "SELECT * FROM `students` LIMIT {$start},{$per_page}";
 $result = mysqli_query($conn, $sql);
 
 // $row = mysqli_fetch_assoc($result);
+echo "<form align=center action='php_mysqli_delete_all.php' name='form1' method='post'>";
 echo "<h1 align='center'>學生資料管理系統</h1>";
 echo "<p align='center'>總共:{$record}筆資料," . "目前在第{$page}頁</p>";
-echo "<p align=\"center\"><a href='php_mysqli_create.php'>新增學生資料</a></p>";
+echo "<p align=\"center\">
+         <a href=\"php_mysqli_create.php\">新增學生資料</a>&emsp;
+         <a href=\"#\" onclick='delall();'>刪除被選取的資料</a>&emsp;
+
+
+
+
+</p>";
 
 //資料內容呈現
 echo "<p><table align=center border=1>";
@@ -49,7 +68,7 @@ echo "<tr>
     <th>住址</th>
     <th>身高</th>
     <th>體重</th>
-    <th colspan='2'>功能</th>
+    <th colspan='3'>功能</th>
 </tr>";
 
 //資料內容
@@ -64,13 +83,14 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<td>" . $row['cAddr'] . "</td>";
     echo "<td>" . $row['cHeight'] . "</td>";
     echo "<td>" . $row['cWeight'] . "</td>";
-    echo "<td><a href='php_mysql_update.php?cID=" . $row["cID"] . "'>修改</a></td>";
-    echo "<td><a href='php_mysql_update.php?cID={$row["cID"]}'>刪除</a></td>";
-
+    echo "<td><a href='php_mysqli_update.php?cID=" . $row["cID"] . "'>修改</a></td>";
+    echo "<td><a href='php_mysqli_delete.php?cID={$row["cID"]}'>刪除</a></td>";
+    echo "<td><input type=\"checkbox\" name=\"del[]\" value='{$row['cID']}'></td>";
     echo "</tr>";
 }
 
 echo "</table></p>";
+echo "</form>";
 
 echo "<table align=center>";
 echo "<tr>";

@@ -34,7 +34,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "add") {
 </head>
 
 <body>
-  <h1 align='center'>學生管理系統 - 新增資料</h1>
+  <h1 align='center'>學生資料管理系統 - 新增資料</h1>
   <p align='center'><a href='php_mysqli_read.php'>回主畫面</a></p>
   <form action="" method="POST" name="formAdd">
     <table border="1" align="center" cellpadding=4>
