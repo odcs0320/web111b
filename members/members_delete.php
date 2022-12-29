@@ -8,10 +8,10 @@
   <title>會員管理系統</title>
 </head>
 <?php
-require_once "connDB.php";
-$cid = $_GET['id'];
+require_once "members_connDB.php";
+$cid = $_GET['m_id'];
 // echo $cid;
-$sql = "SELECT * FROM  `members` WHERE `id` = $cid";
+$sql = "SELECT * FROM  `members` WHERE `m_id` = $cid";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
