@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>會員管理系統</title>
+  <title>會員資料管理系統</title>
 </head>
 
 <body>
-  <h1 align='center'>會員管理系統 - 新增資料 </h1>
+  <h1 align='center'>會員資料管理系統 - 新增資料 </h1>
   <p align='center'><a href="members_read.php">回主畫面</a></p>
   <form action="" method="POST" name="formAdd">
     <table border="1" align="center" cellpadding=4>
@@ -52,7 +52,7 @@
 
       </tr>
       <tr>
-        <td>連結</td>
+        <td>網址</td>
         <td><input type="text" name="m_url" required></td>
       </tr>
       <tr>
@@ -91,7 +91,7 @@
 </html>
 <?php
 if (isset($_POST['action']) && $_POST['action'] == "addnew") {
-    require_once "connDB.php";
+    require_once "members_connDB.php";
     $sql_query = "INSERT INTO `members` (`m_name`, `m_username`, `m_passwd`, `m_sex`, `m_birthday`, `m_level`, `m_email`, `m_url`, `m_phone`, `m_address`, `m_login`, `m_logintime`, `m_jointime`)values(";
     // echo "me";
 

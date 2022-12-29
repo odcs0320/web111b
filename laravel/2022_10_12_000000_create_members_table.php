@@ -17,11 +17,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            // members (`m_name`, `m_username`, `m_passwd`,
-            // `m_sex`, `m_birthday`, `m_level`,
-            //  `m_email`, `m_url`, `m_phone`,
-            //   `m_address`, `m_login`, `m_logintime`, `m_jointime`)
-            $table->id();
+            $table->string('m_id', 11)->id();
             $table->string('m_name');
             $table->string('m_username');
             $table->string('m_passwd');
@@ -32,7 +28,7 @@ return new class extends Migration
             $table->string('m_url')->unique();
             $table->string('m_phone')->unique();
             $table->string('m_address')->unique();
-            $table->string('m_login', 2)->nullable();
+            $table->string('m_login', 11)->nullable();
             $table->timestamp('m_logintime')->nullable();
             $table->timestamp('m_jointime')->nullable();
             $table->timestamps();
