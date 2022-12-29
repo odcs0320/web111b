@@ -8,17 +8,17 @@
   <title>會員管理系統</title>
 </head>
 <?php
-require_once "connDB.php";
-$cid = $_GET['id'];
+require_once "members_connDB.php";
+$cid = $_GET['m_id'];
 // echo $cid;
-$sql = "SELECT * FROM  `members` WHERE `id` = $cid";
+$sql = "SELECT * FROM  `members` WHERE `m_id` = $cid";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
 ?>
 
 <body>
-  <h1 align='center'>會員管理系統 - 刪除資料 </h1>
+  <h1 align='center'>會員資料管理系統 - 刪除資料 </h1>
   <p align='center'><a href="members_read.php">回主畫面</a></p>
   <form action="" method="POST" name="formDelete" onsubmit="return confirm('\n是否要刪除?\n刪除後無法恢復!\n')">
     <table border="1" align="center" cellpadding=4>
@@ -26,7 +26,7 @@ $row = mysqli_fetch_assoc($result);
         <th>欄位</th>
         <th>資料</th>
       </tr>
-      <input type="hidden" name="id" value="<?=$row['id'];?>">
+      <input type="hidden" name="id" value="<?=$row['m_id'];?>">
       <tr>
         <td>姓名</td>
         <td><input type="text" name="m_name" value="<?=$row['m_name'];?>" required></td>
@@ -114,7 +114,7 @@ $row = mysqli_fetch_assoc($result);
 </html>
 <?php
 if (isset($_POST['action']) && $_POST['action'] == "delete") {
-    require_once "connDB.php";
+    require_once "member_connDB.php";
 
     $sql_query = "DELETE FROM `members` WHERE `id`='" . $_GET['id'] . "'";
 
