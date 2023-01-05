@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>單例模式</title>
+  <script>
+    //定義一個類別Peo具有特徵(姓名年齡)
+    function Peo(name, age) {
+      this.perName = name;
+      this.peoAge = age;
+    }
+
+    //實例化,每一次對同一類別Peo實例化,都會產生新的物件
+    let allen = new Peo('allen', 30);
+    let amy = new Peo('amyliu', 25);
+    console.log(allen);
+    console.log(amy);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
