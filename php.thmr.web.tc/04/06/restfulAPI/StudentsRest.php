@@ -1,4 +1,5 @@
-/<?php
+<?php
+
 require_once "singletonPDO.php";
 require_once "SimpleRest.php";
 require_once "function.php";
@@ -7,7 +8,6 @@ class StudentsRest extends SimpleRest
 {
     public function __construct()
     {
-
     }
 
     public function create($table = "students", $col = [], $value = [])
@@ -42,9 +42,8 @@ class StudentsRest extends SimpleRest
         } else {
             $statusCode = 200;
         }
-        $this->setHttpHeaders($statusCode);
+        $this->setHttpHeaders($contentType, $statusCode);
         $responseData = json_encode($responseData, JSON_UNESCAPED_UNICODE);
         return $responseData;
     }
 }
-?>

@@ -1,21 +1,21 @@
 <?php
 class singletonPDO
 {
-  private static $pdo = null;
-  public static function getpdo()
-  {
-    if (self::$pdo == null) {
-      try {
-        self::$pdo = new PDO("mysql:host=localhost;dbname=class", "root", "1qaz@wsx");
-        self::$pdo->exec("set names utf8");
-        self::$pdo->exec("set character_set_client=utf8");
-        self::$pdo->exec("set character_set_results=utf8");
-      } catch (PDOException $e) {
-        echo "錯誤訊息" . $e->getMessage();
-      }
+    private static $pdo = null;
+    public static function getpdo()
+    {
+        if (self::$pdo == null) {
+            try {
+                self::$pdo = new PDO("mysql:host=192.168.62.221;dbname=web111b_04", "web111b_04", "1Qaz@wsx_04");
+                self::$pdo->exec("set names utf8");
+                self::$pdo->exec("set character_set_client=utf8");
+                self::$pdo->exec("set character_set_results=utf8");
+            } catch (PDOException $e) {
+                echo "錯誤訊息" . $e->getMessage();
+            }
+        }
+        return self::$pdo;
     }
-    return self::$pdo;
-  }
 }
 
 //使用
