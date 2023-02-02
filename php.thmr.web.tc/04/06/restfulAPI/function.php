@@ -66,7 +66,7 @@ function update(string $table, int $id, array $col, array $value)
     global $pdo;
     if (count($col) == count($value)) {
         //( col1, col2,.....coln   ) VALUES( ?, ?,.......?)
-        $sql = "INSERT INTO `$table` ";
+        $sql = "UPDATE `$table` SET";
         for ($i = 0; $i < count($col); $i++) {
             $sql .= "`" . $col[$i] . "`";
             if ($i == count($col) - 1) {
