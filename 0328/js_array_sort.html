@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var student_name = new Array("C3", "A2", "B1");
+    console.log(student_name);
+    student_name.sort();
+    console.log(student_name);
+
+    function sort_num(a, b) {
+      // return (a - b);
+      return (b - a);
+    }
+
+    var age = [4000, 300, 20, 1, -5];
+    console.log(age);
+    age.sort(sort_num);
+    console.log(age);
+  </script>
+</body>
+
+</html>

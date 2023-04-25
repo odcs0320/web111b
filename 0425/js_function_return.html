@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+
+
+    }
+    function checkScore() {
+      if ((score < 0) || (score > 100)) {
+        console.log("分數超過範圍!!");
+        return;
+      } else if (score >= 60) {
+        console.log('及格');
+      } else {
+        console.log('不及格');
+      }
+    }
+
+    var score = window.prompt('請輸入數學分數(0-100)', '');
+    checkScore(score);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

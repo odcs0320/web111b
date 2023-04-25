@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    var count = 1;
+    window.onload = function () {
+
+      setInterval(function () {
+        // 抓大圖
+        let g = document.getElementById("g");
+
+        console.log(count);
+        count++;
+
+        if (count == 6)
+          count = 1;
+
+        g.setAttribute("src", '/../imgs/00' + count + '.jpg');
+
+      }, 2500);
+
+      let thumb = document.querySelectorAll('.thumb');
+      console.log(thumb);
+      thumb.forEach(
+        function (t) {
+          // console.log(t);
+          // console.log(t.getAttribute('src'));
+          // console.log(t.getAttribute('data-img'));
+          // console.log(t.dataset.img);
+          // 為每張子圖加入click監聽事件
+          t.addEventListener('click', function () {
+            // 抓大圖
+            let g = document.getElementById("g");
+            // 把大圖的路徑改成小圖
+            console.log(this);
+            g.setAttribute("src", this.getAttribute("src"));
+          })
+        }
+      );
+    }
+  </script>
+  <title>Document</title>
+  <style>
+    img {
+      width: 100%;
+    }
+
+    .gallery {
+      width: 500px;
+      margin: auto;
+    }
+
+    .thumbs {
+      text-align: center;
+    }
+
+    .thumbs img {
+      width: 100px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- 大圖1張 -->
+  <div class="gallery">
+    <img src="/../imgs/001.jpg" alt="" id="g">
+  </div>
+
+  <!-- 縮圖5張 -->
+  <div class="thumbs">
+    <img src="/../imgs/001.jpg" class="thumb" data-img="001" alt="">
+    <img src="/../imgs/002.jpg" class="thumb" data-img="002" alt="">
+    <img src="/../imgs/003.jpg" class="thumb" data-img="003" alt="">
+    <img src="/../imgs/004.jpg" class="thumb" data-img="004" alt="">
+    <img src="/../imgs/005.jpg" class="thumb" data-img="005" alt="">
+  </div>
+</body>
+
+</html>

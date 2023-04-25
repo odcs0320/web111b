@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+      let d = new Date();
+      console.log(d);
+
+      let year = d.getFullYear();
+      console.log(year);
+      let month = d.getMonth();
+      console.log(month);
+      let date = d.getDate();
+      console.log(date);
+      let day = d.getDay();
+      //星期
+      //[0123456] 0 是星期日,除了星期日外1~6不會有問題
+      if (day == 0) {
+        day = "日";
+      }
+      console.log(day);
+
+      let dayArray = ["日", "一", "二", "三", "四", "五", "六"];
+      let dayArray_en = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+      let dayArray_jp = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
+      console.log(dayArray[day]);
+      console.log(dayArray_en[day]);
+      console.log(dayArray_jp[day]);
+
+
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

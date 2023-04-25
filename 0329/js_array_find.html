@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var people = [
+      {
+        name: "Homepage",
+        like: "網頁設計",
+        price: 560
+      },
+      {
+        name: "PHP",
+        like: "網頁程式",
+        price: 400
+      },
+      {
+        name: "C#",
+        like: "C#程式語言",
+        price: 350
+      },
+      {
+        name: "C_Sharp",
+        like: "C#程式語言",
+        price: 600
+      }
+    ];
+
+    //沒有條件,會是undefined
+    var findEmpty = people.find(function (item, index, array) {
+
+    });
+
+    console.log(findEmpty);
+
+    //取得大於500的值
+    var findPriceThan500 = people.find(function (item, index, array) {
+      return item.price > 500
+    });
+
+    console.log(findPriceThan500);
+
+    //找到有2個物件,但是只會回傳找到第一個物件 Homepage
+    //取得陣列 like === "C#程式語言"
+
+    var findlike = people.find(function (item, index, array) {
+      return item.like === "C#程式語言"
+    });
+
+    console.log(findlike);
+
+
+  </script>
+</body>
+
+</html>

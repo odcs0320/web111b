@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .hamburger {
+      height: 60px;
+      width: 60px;
+      /* 要跟nav選單高度一致寬度一致 */
+      background-color: #d3d3d3;
+      border: 1px solid black;
+
+      position: relative;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 40px;
+      height: 5px;
+      background-color: #b3fcff;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .hamburger span::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 5px;
+      background-color: #fcb3ff;
+      position: absolute;
+      bottom: 10px;
+    }
+
+    .hamburger span::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 5px;
+      background-color: #fcb3ff;
+      position: absolute;
+      top: 10px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <div class="hamburger"><span></span></div>
+</body>
+
+</html>

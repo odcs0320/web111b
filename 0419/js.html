@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+  <script>
+    window.onload = function () {
+      console.log('onload');
+
+      let h = document.getElementById("title");
+      console.log(h);
+      // h.addEventListener("click", function () {
+      //   test();
+      // })
+      h.addEventListener("click", test);
+    }
+
+    function test() {
+      let title = document.getElementById("title");
+      title.style.color = "red";
+      title.style.backgroundColor = "blue";
+      title.style.height = "35px";
+      title.style.weight = "100px"
+    }
+
+    function test1() {
+      let title = document.getElementById("title");
+      title.removeEventListener("click", test);
+    }
+
+    function jqtest() {
+      $('#title').css('color', 'blue');
+      $('#title').css('background-color', 'red');
+      $('#title').css('height', '35px');
+      $('#title').css('weight', '100px');
+    }
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      console.log('ready');
+    })
+  </script>
+</head>
+
+<body>
+  <h1 id="title">Hello</h1>
+  <button onclick="test()" id="c1">JSCLICK</button>
+  <button onclick="test1()" id="c1">JSCLICK REMOVE</button>
+  <button onclick="jqtest()">JQCLICK</button>
+</body>
+
+</html>

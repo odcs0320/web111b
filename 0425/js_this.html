@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+      btn = document.getElementById("btn");
+      btn.addEventListener("click", jump);
+
+      // 1.直接呼叫該函數jump
+      jump();
+
+      // 2.用物件的方式來呼叫
+      const obj = {};
+      obj.jump = jump;
+      obj.jump();
+
+      // 呼叫匿名函式
+      jump1();
+
+    }
+    function jump() {
+      console.log(this);
+    }
+
+    var jump1 = () => {
+      console.log(this);
+    }
+  </script>
+</head>
+
+<body>
+  <!-- <button id="btn" onclick="jump()">btn</button> -->
+  <button id="btn"">btn</button>
+</body>
+
+</html>

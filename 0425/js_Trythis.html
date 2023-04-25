@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+
+
+    }
+    // 兩種函數型的變數
+    var word = function () {
+      console.log('hi');
+    }
+
+    function say(aaa) {
+      console.log(aaa);
+    }
+
+    // 函數型變數的回傳
+    var say1 = function show(name) {
+      return "hi," + name;
+    }
+
+    console.log(say1("Jim"));
+
+    var say2 = function (name) {
+      return "hi," + name;
+    }
+
+    console.log(say2("amy"));
+
+    // Function Expression
+    var hello = function (name) {
+      console.log('Hello ' + name);
+      return "aby";
+    }('Jim');
+
+    // hello();
+    console.log(typeof (hello));
+    // hello(); aby('allen')
+    hello;
+
+    // 匿名函數,第一個括號代表函式內容,第二個括號代表執行
+    (function (e) {
+      console.log("a");
+    })();
+
+    // 箭頭函式 >= ES6的語法
+    (e) => {
+      console.log("a");
+    }
+
+    // let aa = (x) => {
+    //   return x * 2;
+    // }
+
+    let aa = x => x * 2;
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

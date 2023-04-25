@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //for
+    let sum1 = 0;
+    for (let i = 1; i <= 100; i++) {
+      sum1 += i;
+    }
+    console.log(sum1);
+
+    //while
+    let sum2 = 0;
+    let j = 1;
+    while (j <= 100) {
+      sum2 += j;
+      j++;
+    }
+    console.log(sum2);
+
+    //do..while
+    let sum3 = 0;
+    let k = 1;
+    do {
+      sum3 += k;
+      k++;
+    } while (k <= 100);
+    console.log(sum3);
+
+    //for..in
+    let arr = [];
+    for (let l = 1; l <= 100; l++) {
+      arr.push(l);
+    }
+    let sum4 = 0;
+    for (let index in arr) {
+      sum4 += arr[index];
+    }
+    console.log(sum4);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+      welcome(sayHello, 'Jim');
+
+    }
+    function sayHello() {
+      return 'Hello, ';
+    }
+
+    // 宣告一個 welcome函式,他的第一個參數是函式
+    function welcome(callback, name) {
+      console.log(callback() + name);
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

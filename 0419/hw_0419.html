@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .hamburger {
+      height: 60px;
+      width: 60px;
+      /* 要跟nav選單高度一致寬度一致 */
+      background-color: #d3d3d3;
+      border: 1px solid black;
+
+      position: relative;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 40px;
+      height: 5px;
+      background-color: #b3fcff;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .hamburger span::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 5px;
+      background-color: #fcb3ff;
+      position: absolute;
+      bottom: 10px;
+    }
+
+    .hamburger span::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 5px;
+      background-color: #fcb3ff;
+      position: absolute;
+      top: 10px;
+    }
+
+    .hamburger-x {
+      height: 60px;
+      width: 60px;
+      /* 要跟nav選單高度一致寬度一致 */
+      background-color: #d3d3d3;
+      border: 1px solid black;
+
+      position: relative;
+      cursor: pointer;
+    }
+
+    .hamburger-x span {
+      display: block;
+      width: 40px;
+      height: 5px;
+      /* background-color: #b3fcff; */
+      background-color: rgba(0, 0, 0, 0);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .hamburger-x span::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 5px;
+      background-color: #fcb3ff;
+      position: absolute;
+      /* bottom: 10px; */
+      transform: rotate(45deg);
+    }
+
+    .hamburger-x span::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 5px;
+      background-color: #fcb3ff;
+      position: absolute;
+      /* top: 10px; */
+      transform: rotate(-45deg);
+    }
+
+  </style>
+  <script>
+    window.onload = function () {
+
+    }
+
+    function hbSwitch() {
+      let hb = document.getElementById('hb');
+      let hbAtr = hb.getAttribute("class");
+      console.log(hbAtr);
+
+      // 方法一
+      if (hbAtr == "hamburger") {
+        hb.setAttribute("class", "hamburger-x");
+      } else {
+        hb.setAttribute("class", "hamburger");
+      }
+
+      // 方法二
+      // hbAtr == "hamburger" ? hb.setAttribute("class", "hamburger-x") : hb.
+      //   setAttribute("class", "hamburger");
+
+      // 方法三
+      // switch (hbAtr) {
+      //   case "hamburger":
+      //     hb.setAttribute("class", "hamburger-x");
+      //     break;
+      //   case "hamburger-x":
+      //     hb.setAttribute("class", "hamburger");
+      //     break;
+
+      //   default:
+      //     break;
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="hamburger" id="hb" onclick="hbSwitch()"><span></span></div>
+</body>
+
+</html>

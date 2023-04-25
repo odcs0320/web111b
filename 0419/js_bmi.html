@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+    }
+
+    function bmi() {
+      let h = document.getElementById("height").value / 100;
+      let w = document.getElementById("weight").value;
+      console.log('h=' + h);
+      console.log('w=' + w);
+      let b = Math.pow(h, 2); //let b = w / (h * h)
+      let result = Math.floor(b * 100) / 100;
+      console.log(b);
+
+      document.getElementById("output").textContent = result;
+    }
+
+  </script>
+</head>
+
+<body>
+  身高:<input type="text" name="" id="height" placeholder="請輸入公分"><br>
+  體重:<input type="text" name="" id="weight" placeholder="請輸入公斤"><br>
+  <button id="cal" onclick="bmi()">計算</button>
+  <div id="output"></div>
+</body>
+
+</html>

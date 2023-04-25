@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+
+
+    }
+    function addsub(x, y) {
+      var add = x + y;
+      var sub = x - y;
+      return [add, sub];
+    }
+
+
+
+    var result = addsub(5, 3);
+    console.log('5 + 3 = ' + result[0] + ' 5 - 3 = ' + result[1]);
+
+    // 6.0以後的寫法
+    var [a, s] = addsub(5, 3);
+    console.log('5 + 3 = ' + a + ' 5 - 3 = ' + s);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

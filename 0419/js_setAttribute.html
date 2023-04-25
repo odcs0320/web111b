@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .test {
+      color: red;
+    }
+
+    .test2 {
+      color: #0af;
+    }
+
+  </style>
+
+  <script>
+    window.onload = function () {
+      let t = document.getElementById('title');
+      let t1 = document.getElementById('q');
+      t1.setAttribute("type", "password");
+      t.setAttribute("class", "test");
+    }
+  </script>
+</head>
+
+<body>
+  <h1 id="title" class="title" data-key="333" data-value="444">TITLE</h1>
+  <input type="text" name="" id="q">
+</body>
+
+</html>

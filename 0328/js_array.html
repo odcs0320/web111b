@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let username = new Array(5)
+    username[0] = "Joe"
+    username[1] = "Ady"
+    username[2] = "Tony"
+    username[3] = "Wang"
+    username[4] = "Merry"
+
+    for (let i = 0; i < username.length; i++) {
+      document.write(username[i] + "<br>")
+      console.log(username[i]);
+    }
+
+    let username1 = new Array("Joe", "Ady", "Tony", "Wang", "Merry")
+
+    username1.forEach(function (e) {
+      console.log(e);
+    })
+
+    let username2 = ["Joe", "Ady", "Tony", "Wang", "Merry"];
+
+    for (let index in username2) {
+      console.log(username2[index]);
+    }
+  </script>
+
+  <script>
+    //清除或增加陣列長度
+    let a = ["HTML", "CSS", "JAVASCRIPT", "PHP", "RWD", "JQUERY"];
+    console.log(a);
+    a.push("ASP");
+    console.log(a);
+    a.pop();
+    console.log(a);
+    a.shift();
+    console.log(a);
+    a.unshift("MSSQL");
+    console.log(a);
+
+    let a1 = ["HTML", "CSS", "JAVASCRIPT", "PHP", "RWD", "JQUERY"];
+    console.log(a1.length);
+    //a1.splice(2);
+    //a1.splice(2, 1);
+    a1.splice(2, 1);
+    console.log(2, 1);
+    //delete a1[2];
+    //console.log(a1);
+  </script>
+
+</body>
+
+</html>

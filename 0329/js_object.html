@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let o = {
+      //屬性
+      name: "amy",
+      age: 23,
+      mail: "amy@gmail.com",
+
+      //陣列
+      subject: ["HTML", "CSS", "JAVASCRIPT", "PHP", "RWD", "JQUERY"],
+
+      //物件
+      subject1: {
+        s1: "HTML",
+        s2: "CSS",
+        s3: "JAVASCRIPT",
+        s4: "PHP",
+        s5: "RWD",
+        s6: "JQUERY"
+      }
+    };
+
+    //屬性成員呼叫
+    console.log(o);
+    console.log(o.name);
+    console.log(o.mail);
+
+    //陣列成員呼叫
+    console.log(o.subject);
+    console.log(o.subject[0]);
+
+    //物件成員呼叫
+    console.log(o.subject1);
+    console.log(o.subject1.s2);
+
+    //示範:陣列內存物件
+    let arr = []
+    arr = [
+      {
+        name: "iPhone XS",
+        color: "silver",
+        size: "128gb"
+      },
+      {
+        name: "iPhone XS",
+        color: "gray",
+        size: "256gb"
+      },
+      {
+        name: "iPhone XS",
+        color: "gold",
+        size: "64gb"
+      }
+    ]
+    console.log(arr);
+    console.log(arr[1]);
+    console.log(arr[1].size);
+    console.log(arr[1].size[0]);
+    console.log(arr[1].size[1]);
+    console.log(arr[1].size[2]);
+    console.log(arr[1].size[3]);
+    console.log(arr[1].size[4]);
+
+    //示範:陣列內存物件,物件成員為陣列值
+    let arr1 = [];
+    arr1 = [
+      {
+        name: "iPhone XS",
+        color: ["silver", "gray", "gold"],
+        size: ["64gb", "256gb", "512gb"]
+      },
+      {
+        name: "iPhone XS Max",
+        color: ["silver", "gray", "gold"],
+        size: ["64gb", "256gb", "512gb"]
+      },
+    ];
+
+    arr1.forEach(function (data) {
+      console.log(data);
+      //console.log(data.color[0]);
+      data.color.forEach(function (d) {
+        console.log(d);
+      })
+      data.size.forEach(function (d) {
+        console.log(d);
+      })
+    });
+
+    console.log(arr1.length);
+    for (let i = 0; i < arr1.length; i++) {
+      console.log(arr1[i]);
+      for (let j = 0; j < arr1[i].color.length; j++) {
+        console.log(arr1[i].color[j]);
+      }
+    }
+
+  </script>
+</body>
+
+</html>
