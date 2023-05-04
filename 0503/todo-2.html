@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .list {
+      color: #F00;
+    }
+
+  </style>
+  <script>
+    window.onload = function () {
+
+
+    }
+    function newItem() {
+      let item = document.getElementById("item").value;
+      console.log(item);
+      let itemText = document.createTextNode(item);
+      let li = document.createElement("li");
+      li.appendChild(itemText);
+      // 加入屬性class與值list在元素li上
+      li.setAttribute("class", "list");
+      let todo = document.getElementById("todo");
+      todo.appendChild(li);
+      // 清除輸入框內容
+      document.getElementById("item").value = "";
+    }
+
+    // // 為 li 元素增加刪除功能
+    // let allList = document.querySelectorAll("li");
+    // // 取出所有<li></li>子項目
+    // allList.forEach(
+    //   function (l) {
+    //     l.addEventListener("click", function () {
+    //       //這裡的刪除只針對既有的<li>子項目,透過按鍵ADD新增的就無法刪除
+    //       this.remove();
+    //     })
+    //   }
+    // );
+
+    document.addEventListener("click", function () {
+      let allList = document.querySelectorAll("li");
+      // console.log(allList);
+      allList.forEach(function (l) {
+        l.addEventListener("click", function () {
+          this.remove();
+        })
+      })
+    })
+
+  </script>
+</head>
+
+<body>
+  <input type="text" name="" id="item">
+  <button id="btn" onclick="newItem()">ADD</button>
+  <ul id="todo">
+    <li class="list">ITEM</li>
+  </ul>
+</body>
+
+</html>

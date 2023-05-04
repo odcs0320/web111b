@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+
+      // 1.什麼是DOM物件(js物件):使用js方法獲取的元素就是js物件(DOM物件)
+      var cloth = document.getElementById("cloth")
+      cloth.style.backgroundColor = "pink";
+      console.log(cloth);
+
+      // 2.什麼是JQ物件:使用jq方法獲取的元素就是jq物件
+      var $li = $("li");
+      console.log($li);
+      $li.text("我是JQ物件");
+
+      // 3.js物件與jq物件的區別
+      // js 物件能不能使用jq物件的方法? 不可行的
+      // var cloth = document.getElementById("cloth");
+      // cloth.text("我是js物件");
+
+      // 4.js物件與jq物件的聯繫:jq物件其實就是js物件的一個集合體,偽陣列,裡面存放一大堆的js物件
+      // jq物件能不能使用dom(js)物件的方法? 不可行的
+      var $li = $("li");
+      console.log($li);
+      console.log($li[0]);
+      console.log($li.get(0));
+      // $li.setAttribute("name", "here")
+      $li[0].setAttribute("name", "here")
+      $li.get(0).setAttribute("name2", "here2")
+
+      // DOM無法調用JQ物件的方法,因為兩個是不同物件
+      var cloth = document.getElementById("cloth")
+      console.log(cloth);
+      // cloth.text("我是js物件")
+      $(cloth).text("轉換身分")
+
+      // jq物件如何轉成dom物件(取出來)
+      var $li = $("li");
+      console.log($li[0]);
+      console.log($li[1]);
+      console.log($li[2]);
+      console.log($li[3]);
+      $li[1].style.backgroundColor = "red";
+      $li[2].style.backgroundColor = "yellow";
+
+      //       結論:
+      //       1.什麼是DOM物件:用js的方式獲取到的物件時為DOM物件
+      //       2.jQuery對象:用jq的方式獲取到的物件時為jq物件
+      //       3.區別與聯繫
+      //       4.區別:js物件與jq物件的方法不能混著用
+      //       5.聯繫:DOM->jQuery $(js物件)   jQuery->DOM $li[0]或$li.get(0)
+
+    });
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li id="cloth">外套</li>
+    <li>襯衫</li>
+    <li>窄裙</li>
+    <li>褲襪</li>
+  </ul>
+</body>
+
+</html>

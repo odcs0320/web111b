@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+
+
+    }
+    function add() {
+      // 先建立一個外面的元素 <p>
+      let element = document.createElement("p");
+      // 加入元素內的文字內容
+      let content = document.createTextNode("Hello World");
+      // 合併一起,容器(元素)加入內容
+      element.appendChild(content);
+      // 輸出於 #output 區塊
+      let output = document.getElementById("output");
+      console.log(output);
+      output.appendChild(element);
+    }
+  </script>
+</head>
+
+<body>
+  <button id="btn" onclick="add()">Click</button>
+  <div id="output"></div>
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css'
+    integrity='sha512-+ouAqATs1y4kpPMCHfKHVJwf308zo+tC9dlEYK9rKe7kiP35NiP+Oi35rCFnc16zdvk9aBkDUtEO3tIPl0xN5w=='
+    crossorigin='anonymous' />
+  <title>Document</title>
+  <link rel="stylesheet" href="hamburger.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+  <style>
+    @media screen and (min-width: 1200px) {
+      .container {
+        width: 100%;
+        background-color: #333;
+      }
+
+      nav {
+        width: 1200px;
+        height: 60px;
+        margin: auto;
+        /*ackground-color: #333;*/
+      }
+
+      nav .hamburger {
+        display: none;
+      }
+
+      nav .hamburger-x {
+        display: none;
+      }
+
+      nav .logo {
+        float: left;
+      }
+
+      nav .logo a {
+
+        padding-right: 50px;
+        font-size: 1.5em;
+        /*background-color: #555;*/
+      }
+
+      nav .menu {
+        float: left;
+      }
+
+      nav .search {
+        float: right;
+        display: none;
+      }
+
+      nav ul {
+        padding: 0%;
+        margin: 0;
+      }
+
+      nav li {
+        float: left;
+        list-style: none;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        line-height: 60px;
+        padding: 0 15px;
+        display: block;
+        transition: all 5ms;
+      }
+
+      nav .menu a:hover {
+        background-color: #666;
+      }
+
+      nav .search a:hover {
+        background-color: #666;
+      }
+
+      .list {
+        float: left;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        display: none;
+      }
+
+      .list ul {
+        float: left;
+        list-style: none;
+      }
+
+      .list li {
+        float: left;
+        list-style: none;
+      }
+
+      .list a {
+        color: #fff;
+        text-decoration: none;
+        line-height: 60px;
+        padding: 0 15px;
+        display: block;
+        transition: all 5ms;
+      }
+
+      .list a:hover {
+        background-color: #666;
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      .container {
+        width: 100%;
+        background-color: #333;
+      }
+
+      nav {
+        /* width: 1200px; */
+        width: 100%;
+        height: 60px;
+        margin: auto;
+        /*ackground-color: #333;*/
+      }
+
+      nav .hamburger {
+        float: left;
+      }
+
+      nav .hamburger-x {
+        float: left;
+      }
+
+      nav .logo {
+        display: inline-block;
+        margin-left: 35%;
+        /* float: left; */
+      }
+
+      nav .logo a {
+
+        padding-right: 50px;
+        font-size: 1.5em;
+        /*background-color: #555;*/
+      }
+
+      nav .menu {
+        float: left;
+        display: none;
+      }
+
+      nav .search {
+        float: right;
+      }
+
+      nav ul {
+        padding: 0%;
+        margin: 0;
+      }
+
+      nav li {
+        float: left;
+        list-style: none;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        line-height: 60px;
+        padding: 0 15px;
+        display: block;
+        transition: all 5ms;
+      }
+
+      nav .menu a:hover {
+        background-color: #666;
+      }
+
+      nav .search a:hover {
+        background-color: #666;
+      }
+
+      .list {
+        float: left;
+        width: 250px;
+        height: 500px;
+        background-color: #333;
+        display: none;
+      }
+
+      .list ul {
+        float: left;
+        list-style: none;
+      }
+
+      .list li {
+        float: left;
+        list-style: none;
+      }
+
+      .list a {
+        color: #fff;
+        text-decoration: none;
+        line-height: 60px;
+        /* padding: 0 15px; */
+        display: block;
+        /* transition: all 5ms; */
+      }
+
+      .list a:hover {
+        background-color: #666;
+      }
+    }
+
+  </style>
+  <script>
+    $(document).ready(function () {
+      $(window).resize(function () {
+        let w = $(window).width();
+        if (w > 1200) {
+          $(".hamburger").hide();
+          $(".hamburger-x").hide();
+          $(".list").hide();
+          $(".menu").show();
+          $(".search").show();
+        } else {
+          if ($('#hb').attr('class') == 'hamburger') {
+            $(".hamburger").show();
+            $(".menu").hide();
+            $(".search").show();
+            $(".list").hide();
+          } else {
+            $("#hb").addClass("hamburger");
+            $("#hb").removeClass("hamburger-x");
+            $(".hamburger").show();
+            $(".menu").hide();
+            $(".search").show();
+          }
+        }
+      });
+
+      $("#hb").click(function () {
+        if ($('#hb').attr('class') == 'hamburger') {
+          $(".list").slideDown();
+          $("#hb").removeClass("hamburger");
+          $("#hb").addClass("hamburger-x");
+        } else {
+          $(".list").slideUp();
+          $("#hb").addClass("hamburger");
+          $("#hb").removeClass("hamburger-x");
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <div class="hamburger" id="hb"><span></span></div>
+      <div class="logo">
+        <a href="#">ASUS</a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#">智慧手機</a></li>
+          <li><a href="#">筆記型電腦</a></li>
+          <li><a href="#">顯示器/桌上型電腦</a></li>
+          <li><a href="#">主機板/零組件</a></li>
+          <li><a href="#">網通產品/IoT/伺服器</a></li>
+          <li><a href="#">周邊配件</a></li>
+          <li><a href="#">商店</a></li>
+          <li><a href="#">服務&社群</a></li>
+          <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>
+          <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+        </ul>
+      </div>
+      <div class="search">
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="list">
+    <ul>
+      <li><a href="#">智慧手機</a></li><br>
+      <li><a href="#">筆記型電腦</a></li><br>
+      <li><a href="#">顯示器/桌上型電腦</a></li><br>
+      <li><a href="#">主機板/零組件</a></li><br>
+      <li><a href="#">網通產品/IoT/伺服器</a></li><br>
+      <li><a href="#">周邊配件</a></li><br>
+      <li><a href="#">商店</a></li><br>
+      <li><a href="#">服務&社群</a></li><br>
+      <li><a href="#"><i class="fa-regular fa-user"></i> My Account</a></li><br>
+    </ul>
+  </div>
+
+
+</body>
+
+</html>
