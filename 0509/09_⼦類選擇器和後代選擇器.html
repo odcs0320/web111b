@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      // $(".father>p").css("backgroundColor", "red") 子代選擇器
+      // $(".father p").css("backgroundColor", "red") 後代選擇器
+
+      // $("input:disabled") disabled 查找所有不可⽤ input 元素
+      // $("input:enabled") 查找所有可⽤ input 元素
+    });
+  </script>
+</head>
+
+<body>
+  <form>
+    <input type="email" name="email" disabled="disabled" /><br>
+    <input type="text" name="id" />
+  </form>
+
+  <div class="father">
+    <div>11</div>
+    <div>22
+      <p>111</p>
+      <p>222</p>
+      <p>333</p>
+    </div>
+    <div>33</div>
+    <div>44</div>
+    <div>55</div>
+    <p>66</p>
+    <p>77</p>
+    <p>88</p>
+    <p>99</p>
+  </div>
+</body>
+
+</html>

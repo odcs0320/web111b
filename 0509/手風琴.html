@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .parentWrap {
+      width: 200px;
+      text-align: center;
+    }
+
+    .menuGroup {
+      border: 1px solid #999;
+      background-color: #e0ecff;
+    }
+
+    .groupTitle {
+      display: block;
+      height: 20px;
+      line-height: 20px;
+      font-size: 16px;
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .menuGroup>div {
+      height: 200px;
+      background-color: #fff;
+      display: none;
+    }
+
+  </style>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+  <script>
+    $(document).ready(function () {
+      // 給所有的span註冊點擊事件, 讓當前span的兄弟div顯示出來
+      $(".groupTitle").click(function () {
+        $(this).next().slideDown(200).parent().siblings().children("div").slideUp(200);
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <ul class="parentWrap">
+    <li class="menuGroup">
+      <span class="groupTitle">標題1</span>
+      <div>我是彈出來div1</div>
+    </li>
+    <li class="menuGroup">
+      <span class="groupTitle">標題2</span>
+      <div>我是彈出來div2</div>
+    </li>
+    <li class="menuGroup">
+      <span class="groupTitle">標題3</span>
+      <div>我是彈出來div3</div>
+    </li>
+    <li class="menuGroup">
+      <span class="groupTitle">標題4</span>
+      <div>我是彈出來div4</div>
+    </li>
+  </ul>
+</body>
+
+</html>

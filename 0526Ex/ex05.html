@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex5</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    window.onload = function () {
+      let allList = document.querySelectorAll("li");
+      // console.log(allList);
+      allList.forEach(function (l) {
+        l.addEventListener("click", function () {
+          this.remove();
+        })
+      })
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Task</h1>
+  <ul>
+    <li>Buy mile</li>
+    <li>Send mail to boss</li>
+    <li>Watch movie with friends</li>
+    <ul>
+
+</body>
+
+</html>

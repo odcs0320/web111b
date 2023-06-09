@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+
+  </style>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      //使用JS
+      // var box = document.getElementById("box");
+      // var a = document.createElement("a");
+      // box.appendChild(a);
+      // a.setAttribute("href", "https://www.google.com");
+      // a.setAttribute("target", "_blank");
+      // a.innerHTML = "Google 查詢";
+
+      // $a = ("<a href='https://www.google.com' target='_blank'>Google 查詢</a>")
+      // $("#box").append($a);
+
+      $("#box").append("<a href='https://www.google.com' target='_blank'>Google 查詢</a>");
+
+    });
+  </script>
+</head>
+
+<body>
+  <div id="box">我是盒子<br></div>
+</body>
+
+</html>

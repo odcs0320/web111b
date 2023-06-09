@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    // 對於布林類型的屬性(如checked,disabled,selected),不要用attr方法,
+    // 應該要用prop方法跟attr方法一樣,僅是prop針對布林類型
+    $(document).ready(function () {
+      $("input").eq(0).click(function () {
+        $("#ck").prop("checked", true);
+      })
+      $("input").eq(1).click(function () {
+        $("#ck").prop("checked", false);
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <input type="button" value="選中">
+  <input type="button" value="不選中">
+  <input type="checkbox" name="" id="ck">
+</body>
+
+</html>

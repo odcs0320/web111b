@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      // css(name,value)
+      // 修改單個樣式
+      // 單樣式樣式名稱可用'-'或單駝峰寫法
+      // $("li").css("background-color", "pink");
+      // $("li").css("backgroundColor", "pink");
+      $("li").css("font-size", "32px");
+
+      // 修改多個樣式
+      // 格式:css(obj)
+      // 多樣式樣式名稱只可用單駝峰寫法
+      $("li").css({
+        color: "red",
+        border: "1px solid black",
+        backgroundColor: "pink"
+      });
+
+      //獲取元素
+      //格式:css(name);
+      //name:想要獲取的樣式
+      $("li").eq(0).css("fontSize", "20px");
+      $("li").eq(1).css("fontSize", "25px");
+      $("li").eq(2).css("fontSize", "30px");
+      $("li").eq(3).css("fontSize", "35px");
+      console.log($("li").eq(0).css("fontSize"));
+      console.log($("li").eq(1).css("fontSize"));
+      console.log($("li").eq(2).css("fontSize"));
+      console.log($("li").eq(3).css("fontSize"));
+
+      //隱式反覆運算
+      //1.設置操作的時候,如果是多個元素,那麼給所有元素設置相同的值
+      $("li").css("fontSize", "16px")
+      console.log($("li").eq(0).css("fontSize"));
+      console.log($("li").eq(1).css("fontSize"));
+      console.log($("li").eq(2).css("fontSize"));
+      console.log($("li").eq(3).css("fontSize"));
+
+      //2.獲取操作的時候，如果是多個元素，那麼只會返回第⼀個元素的值。
+      $("li").eq(0).css("fontSize", "20px");
+      $("li").eq(1).css("fontSize", "25px");
+      $("li").eq(2).css("fontSize", "30px");
+      $("li").eq(3).css("fontSize", "35px");
+      console.log($("li").css("font-size"));
+
+    });
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li>1111</li>
+    <li>2222</li>
+    <li>3333</li>
+    <li>4444</li>
+  </ul>
+</body>
+
+</html>

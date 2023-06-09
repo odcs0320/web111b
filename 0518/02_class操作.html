@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      $("input").eq(0).click(function () {
+        //添加basic類別
+        $("li").addClass("basic");
+      });
+      $("input").eq(1).click(function () {
+        //添加bigger類別
+        $("li").addClass("bigger");
+      });
+      $("input").eq(2).click(function () {
+        //移除bigger類別
+        $("li").removeClass("bigger");
+      });
+      $("input").eq(3).click(function () {
+        //判斷bigger類別
+        console.log($("li").hasClass("bigger"));
+        if ($("li").hasClass("bigger")) {
+          $("li").removeClass("bigger");
+        }
+      });
+      $("input").eq(4).click(function () {
+        //切換類別
+        $("li").toggleClass("basic");
+      });
+    });
+  </script>
+  <style>
+    li.basic {
+      background-color: pink;
+      font-size: 32px;
+      color: red;
+    }
+
+    .bigger {
+      font-size: 40px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <input type="button" value="添加 basic 類別">
+  <input type="button" value="添加 bigger 類別">
+  <input type="button" value="移除 bigger 類別">
+  <input type="button" value="判斷 bigger 類別">
+  <input type="button" value="切換類別">
+
+  <ul>
+    <li class="aa bb cc dd">1</li>
+    <li class="aa bb cc dd">2</li>
+    <li class="aa bb cc dd">3</li>
+    <li class="aa bb cc dd">4</li>
+  </ul>
+</body>
+
+</html>

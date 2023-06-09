@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+  <script>
+    $(document).ready(function () {
+      // 定義和用法:
+      // index() 方法返回指定元素相對於其他指定元素的index 位置。
+      //      這些元素可通過jQuery 選擇器或DOM 元素來指定。
+      // 註釋：如果未找到元素，index() 將返回 - 1。
+
+      // 第一個匹配元素的index，相對於同胞元素:
+      //  獲得第一個匹配元素相對於其同胞元素的index 位置。
+      // 語法: $(selector).index()
+      $('li').click(function () {
+        console.log($('li').index(this));
+
+      });
+
+
+    });
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li><a href="">項目1</a></li>
+    <li><a href="">項目2</a></li>
+    <li><a href="">項目3</a></li>
+    <li><a href="">項目4</a></li>
+    <li><a href="">項目5</a></li>
+    <li><a href="">項目6</a></li>
+    <li><a href="">項目7</a></li>
+    <li><a href="">項目8</a></li>
+    <li><a href="">項目9</a></li>
+    <li><a href="">項目10</a></li>
+  </ul>
+  <ul>
+    <li><a href="">項目1</a></li>
+    <li><a href="">項目2</a></li>
+    <li><a href="">項目3</a></li>
+    <li><a href="">項目4</a></li>
+    <li><a href="">項目5</a></li>
+    <li><a href="">項目6</a></li>
+    <li><a href="">項目7</a></li>
+    <li><a href="">項目8</a></li>
+    <li><a href="">項目9</a></li>
+    <li><a href="">項目10</a></li>
+  </ul>
+</body>
+
+</html>

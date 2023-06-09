@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(function () {
+      // $("ul").children("li").text()
+      // '12345678910'
+      // $("ul>li").text()
+      // '12345678910'
+      // $("ul").find("li").text()
+      // '12345678910'
+      // $("ul li").text()
+      // '12345678910'
+      // $("#first").siblings("li").text()
+      // '2345678910'
+      // $("#first").parent()
+      // jQuery.fn.init[ul, prevObject: jQuery.fn.init(1)]0: ullength: 1prevObject: jQuery.fn.init[li#first][[Prototype]]: Object(0)
+      // $("li").eq(2).text()
+      // '3'
+      // $("li").next().text()
+      // '2345678910'
+      // $("li:eq(2)").next().text()
+      // '4'
+      // $("li:eq(2)").prev().text()
+      // '2'
+    })
+  </script>
+</head>
+
+<body>
+  <ul>
+    <p>123</p>
+    <div>456</div>
+    <li id="first">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
+</body>
+
+</html>

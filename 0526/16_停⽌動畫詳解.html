@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      display: none;
+    }
+
+  </style>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      //按下"開始"按鈕,執行動畫滑入4秒,再滑出4秒
+      $("input").eq(0).click(function () {
+        $("div").slideDown(4000).slideUp(4000);
+      });
+      //設定結束方式
+      $("input").eq(1).click(function () {
+        //stop ⽅法: 停⽌當前正在執⾏動畫
+        //stop(clearQueue, jumpToEnd);
+        //第⼀個參數: 是否清除佇列
+        //第⼆個參數: 是否跳轉到最終效果
+        $("div").stop(true, true);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <input type="button" value="開始">
+  <input type="button" value="結束">
+  <div></div>
+</body>
+
+</html>

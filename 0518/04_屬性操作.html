@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      //用法跟css一樣
+      //設置單個屬性
+      // $("img").attr("alt", "圖破了");
+      // $("img").attr("title", "錯錯錯錯");
+
+      //設置多個屬性
+      $("img").attr({
+        alt: "圖破了",
+        title: "錯錯錯錯"
+      });
+
+      //獲取屬性
+      //傳需要獲取的屬性名稱,返回對應的屬性值
+      console.log($('img').attr("alt"));
+    });
+  </script>
+</head>
+
+<body>
+  <img src="imgs/04.gif" alt="突破了" title="對對對">
+</body>
+
+</html>

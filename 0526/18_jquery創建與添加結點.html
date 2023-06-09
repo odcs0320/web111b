@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+
+  </style>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      // $a = $("<a href='https://www.google.com' target='_blank'>Google 查詢</a>");
+      // $("div").append($a);
+      //在指定的父元素("div")內添加子元素("p")
+      // $("div").append($("p"));
+      //子元素("p")被添加到父元素("div")裡面了
+      // $("p").appendTo($("div"));
+
+      // $("div").prepend($("p"));
+      // $("p").prependTo($("div"));
+
+      // $("div").after($("p"));
+      $("div").before($("p"));
+    });
+  </script>
+</head>
+
+<body>
+  <div id="box">我是內容</div>
+  <p>我是外面p的元素</p>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex3</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      $("tr:odd").css({
+        "background-color": "red",
+        "color": "white",
+      });
+      $("tr:even").css({
+        "background-color": "gray",
+        "color": "black",
+      });
+      $("tr:first").css({
+        "background-color": "white",
+        "color": "black",
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th>Product</th>
+      <td>Price</th>
+    </tr>
+    <tr>
+      <td>iPhone</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <td>iPad</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>iMac</td>
+      <td>599</td>
+    </tr>
+    <tr>
+      <td>Mac Mini</td>
+      <td>350</td>
+    </tr>
+  </table>
+</body>
+
+</html>

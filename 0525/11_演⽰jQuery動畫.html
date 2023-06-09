@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      background: #e9ffb7;
+    }
+
+    .divItem {
+      width: 400px;
+      height: 400px;
+      background: pink;
+      position: absolute;
+      /*margin: 100px auto 0;*/
+    }
+
+    /* 說明部分為紅色字體，12px 字體 */
+    .disc {
+      font-size: 12px;
+      color: red;
+    }
+
+    /* 當前正在執行的動畫的樣式 */
+    .active {
+      color: #ff6700;
+    }
+
+    /* 已經執行完的動畫的樣式 */
+    .passed {
+      color: #c6c6c6;
+    }
+
+    .current {
+      background: #ff6700;
+    }
+
+  </style>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+  <script>
+
+    // 控制顏色函數
+    function showColor(id) {
+      if (id !== '') {
+        $('#' + id)
+          .addClass('active')
+          .prev()
+          .removeClass()
+          .addClass('passed');
+      } else {
+        $('#msg').children('.active').removeClass().addClass('passed');
+      }
+    }
+
+    //顯示現在 <span> 的 id (hide,show,fadeout,fadein,slideup,slidedown,fadeto,animate)
+    function showCurSpan(id) {
+      $('#' + id)
+        .addClass('current')
+        .siblings()
+        .removeClass('current');
+    }
+
+    $(function () {
+
+      // .stop() 在動畫或效果(包括滑動、淡入淡出和自定義動畫)完成前對它們進行停止。
+      // .stop() 動畫隊列停止動畫測試，只停止當前正在進行的動畫，停止當前動畫後，隊列中的下一個動畫開始進行
+      // .stop(true/false)  'true': 可以停止所有動畫效果而不是只停止當前動畫
+      // .stop(stopAll, goToEnd)
+      //       stopAll	可選。規定是否停止被選元素的所有加入佇列的動畫。(停止動畫佇列)
+      //       goToEnd	可選。規定是否允許完成當前的動畫。(在當前只能在設置了stopAll 參數時使用)
+      // 該參數只能在設置了 stopAll 參數時使用。
+
+      //$("div").stop(true);  停止展示窗所有動畫
+
+      //設定執行動畫時間長度
+      var speed = 4000;
+      //監聽 '開始動畫' 按鈕事件
+      $('input').click(function () {
+        // 為 #hide 加上 .active (紅色)
+        // "隱藏動畫效果" 文字變紅色
+        $('#hide').addClass('active');
+        //粉紅 <div> 標籤 開始做動畫展示
+        $('div')
+          //隱藏動畫
+          .hide(speed, function () {
+            // #show 加入.active(展示動畫效果) 變紅色，拿掉前面的 #hide 上的.active 後添增.pass 變灰色
+            showColor('show');
+          })
+          //展示動畫效果
+          .show(speed, function () {
+            // #fadeout 加入.active(淡出動畫效果) 變紅色，拿掉前面的 #show 上的.active 後添增.pass 變灰色
+            showColor('fadeout');
+          })
+          //顯示淡出動畫
+          .fadeOut(speed, function () {
+            // #fadein 加入.active(淡入動畫效果) 變紅色，拿掉前面的 #fadeout 上的.active 後添增.pass 變灰色
+            showColor('fadein');
+          })
+          //顯示淡入動畫
+          .fadeIn(speed, function () {
+            // #slideup 加入.active(滑出動畫效果) 變紅色，拿掉前面的 #fadeIn 上的.active 後添增.pass 變灰色
+            showColor('slideup');
+          })
+          //顯示滑出動畫
+          .slideUp(speed, function () {
+            // #slidedown 加入.active(滑入動畫效果) 變紅色，拿掉前面的 #slideup 上的.active 後添增.pass 變灰色
+            showColor('slidedown');
+          })
+          //顯示滑入動畫
+          .slideDown(speed, function () {
+            // #fadeto 加入.active(改變不透明度動畫效果) 變紅色，拿掉前面的 #slidedown 上的.active 後添增.pass 變灰色
+            showColor('fadeto');
+          })
+
+          //改變不透明度動畫效果
+          // fadeTo(speed, opacity, callback)
+          //speed: msec 或 "slow"/"normal"/"fast" 可選
+          //opactit:必需。規定要淡入或淡出的透明度。必須是介於 0.00 與 1.00 之間的數字。
+          //callback
+          .fadeTo(speed, 0.4, function () {
+            // #animate 加入.active(animate) 變紅色，拿掉前面的 #fadeTo 上的.active 後添增.pass 變灰色
+            showColor('animate');
+            // 不透明度改變完後，展示窗背景變綠色
+            $('div').css('background', 'green');
+          })
+
+          // animate() 方法執行 CSS 屬性集的自訂動畫。
+          // 該方法通過CSS樣式將元素從一個狀態改變為另一個狀態。CSS屬性值是逐漸改變的，這樣就可以創建動畫效果。
+          // 只有數字值可創建動畫（比如 "margin:30px"）。字串值無法創建動畫（比如 "background-color:red"）。
+          // 注釋：使用 "+=" 或 "-=" 來創建相對動畫（relative animations）。
+          // $(selector).animate(styles, speed, easing, callback)
+          // https://www.w3school.com.cn/jquery/effect_animate.asp
+
+          .animate(
+            {
+              left: 400,
+            },
+            speed
+          )
+          .animate(
+            {
+              height: 100,
+            },
+            speed
+          )
+          .animate(
+            {
+              width: 100,
+            },
+            speed
+          )
+          .animate(
+            {
+              height: 400,
+            },
+            speed
+          )
+          .animate(
+            {
+              width: 400,
+            },
+            speed
+          )
+          .animate(
+            {
+              left: 8,
+            },
+            speed,
+            function () {
+              showColor('');
+              $('div').css('background', 'pink').fadeTo(0, 1);
+              $('#msg').children().removeClass();
+            }
+          );
+      });
+
+      var $divItem = $('.divItem');
+      // 宣告一事件物件: 裡面有 8 個屬性(hide,show,fadeout,fadein,slideup,slidedown,fadeto,animate)，每一屬性有一方法
+      var eventObj = {
+        hide: function () {
+          $divItem.hide(speed);
+        },
+        show: function () {
+          $divItem.show(speed);
+        },
+        fadeout: function () {
+          $divItem.fadeOut(speed);
+        },
+        fadein: function () {
+          $divItem.fadeIn(speed);
+        },
+        slideup: function () {
+          $divItem.slideUp(speed);
+        },
+        slidedown: function () {
+          $divItem.slideDown(speed);
+        },
+        fadeto: function () {
+          $divItem.fadeTo(speed, 0.4, function () {
+            $('div').css('background', 'green');
+          });
+        },
+        animate: function () {
+          $divItem
+            .animate(
+              {
+                left: 400,
+              },
+              speed
+            )
+            .animate(
+              {
+                height: 100,
+              },
+              speed
+            )
+            .animate(
+              {
+                width: 100,
+              },
+              speed
+            )
+            .animate(
+              {
+                height: 400,
+              },
+              speed
+            )
+            .animate(
+              {
+                width: 400,
+              },
+              speed
+            )
+            .animate(
+              {
+                left: 8,
+              },
+              speed,
+              function () {
+                $('div').css('background', 'pink').fadeTo(0, 1);
+              }
+            );
+        },
+      };
+
+      console.log(eventObj);
+
+
+      // 動畫效果 span 綁定事件
+      $('span').click(function () {
+
+        // 按下任一 span 時停止所有動畫
+        $divItem.stop(true, true);
+
+        // 獲取當前span的id屬性
+        var id = this.id;
+        console.log(id);
+        // 設置當前被選中
+        showCurSpan(id);
+        // 事件處理，執行選中的 span 執行該動畫效果
+        console.log(eventObj[id]);
+        //id 是 key
+        eventObj[id]();
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <input type="button" value="開始動畫" />
+  <span class="disc">說明：橙色表示當前正在執行的動畫，灰色表示已經執行完的動畫，黑色表示還沒有執行的動畫</span>
+  <p id="msg">
+    當前展示的是：
+    <span id="hide">隱藏動畫效果</span>
+    <span id="show">展示動畫效果</span>
+    <span id="fadeout">淡出動畫效果</span>
+    <span id="fadein">淡入動畫效果</span>
+    <span id="slideup">滑出動畫效果</span>
+    <span id="slidedown">滑入動畫效果</span>
+    <span id="fadeto">改變不透明度動畫效果</span>
+    <span id="animate">自訂動畫效果</span>
+  </p>
+  <div class="divItem"></div>
+
+</body>
+
+</html>

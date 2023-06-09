@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .wrapper {
+      width: 298px;
+      height: 280px;
+      margin: 100px auto;
+      border: 1px solid pink;
+      overflow: hidden;
+    }
+
+    #left,
+    #center,
+    #right {
+      float: left
+    }
+
+    #left li,
+    #right li {
+      background: url(imgs/lili.jpg) repeat-x;
+      /* background-image: url(imgs/lili.jpg) repeat-x; */
+    }
+
+    #left li a,
+    #right li a {
+      display: block;
+      width: 48px;
+      height: 27px;
+      border-bottom: 1px solid pink;
+      line-height: 27px;
+      text-align: center;
+      color: black;
+    }
+
+    #left li a:hover,
+    #right li a:hover {
+      background-image: url(imgs/abg.gif);
+    }
+
+    #center {
+      border-left: 1px solid pink;
+      border-right: 1px solid pink;
+    }
+
+  </style>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      //$(".wrapper>ul>li img").eq(0).show(); // 初始顯示第一張圖片
+      $(".wrapper>ul>li").mousemove(function () {
+        var mouseX = event.pageX - $(this).offset().left; // 取得滑鼠在圖片內的相對位置
+        var galleryWidth = $(this).width();
+        var imageCount = $(".wrapper>ul>li").length;
+        var index = Math.floor((mouseX / galleryWidth) * imageCount); // 計算出對應的圖片索引
+
+        // $(".wrapper>ul>li img").hide(); // 隱藏所有圖片
+        $(".wrapper>ul>li img").eq(index).show(); // 顯示對應的圖片
+      })
+    });
+
+  </script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <ul id="left">
+      <li><a href="#">L1張圖</a></li>
+      <li><a href="#">L2張圖</a></li>
+      <li><a href="#">L3張圖</a></li>
+      <li><a href="#">L4張圖</a></li>
+      <li><a href="#">L5張圖</a></li>
+      <li><a href="#">L6張圖</a></li>
+      <li><a href="#">L7張圖</a></li>
+      <li><a href="#">L8張圖</a></li>
+      <li><a href="#">L9張圖</a></li>
+      <li><a href="#">L10張圖</a></li>
+    </ul>
+    <ul id="center">
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L1張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L2張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L3張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L4張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L5張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L6張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L7張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L8張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L9張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=L10張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R1張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R2張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R3張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R4張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R5張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R6張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R7張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R8張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R9張圖" alt=""></a></li>
+      <li><a href="#"><img src="https://fakeimg.pl/200x280/?text=R10張圖" alt=""></a></li>
+    </ul>
+    <ul id="right">
+      <li><a href="#">R1張圖</a></li>
+      <li><a href="#">R2張圖</a></li>
+      <li><a href="#">R3張圖</a></li>
+      <li><a href="#">R4張圖</a></li>
+      <li><a href="#">R5張圖</a></li>
+      <li><a href="#">R6張圖</a></li>
+      <li><a href="#">R7張圖</a></li>
+      <li><a href="#">R8張圖</a></li>
+      <li><a href="#">R9張圖</a></li>
+      <li><a href="#">R10張圖</a></li>
+    </ul>
+
+
+  </div>
+</body>
+
+</html>

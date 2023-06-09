@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      //mouseover:滑鼠經過事件
+      //mouseout:滑鼠離開事件
+      //mouseenter:滑鼠進入事件
+      //mouseleave:滑鼠離開事件
+
+      var $li = $(".wrap>ul>li");
+      // 給li註冊滑鼠經過事件,讓自己的ul顯示出來
+
+      $li.mouseenter(function () {
+        //找到所有的兒子,並且它是ul
+        $(this).children("ul").show();
+      });
+
+      $li.mouseleave(function () {
+        //找到所有的兒子,並且它是ul
+        $(this).children("ul").hide();
+      });
+
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrap {
+      width: 330px;
+      height: 30px;
+      margin: 100px auto 0;
+      padding-left: 10px;
+      background-image: url(imgs/bg.jpg);
+    }
+
+    .wrap li {
+      background-image: url(imgs/libg.jpg);
+    }
+
+    .wrap>ul>li {
+      float: left;
+      margin-right: 10px;
+      position: relative;
+    }
+
+    .wrap a {
+      display: block;
+      height: 30px;
+      width: 100px;
+      text-decoration: none;
+      color: #000;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .wrap li ul {
+      position: absolute;
+      top: 30px;
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <ul>
+      <li>
+        <a href="javescript:void(0);">一級選單1</a>
+        <ul class="ul">
+          <li><a href="javescript:void(0);">二級選單11</a></li>
+          <li><a href="javescript:void(0);">二級選單12</a></li>
+          <li><a href="javescript:void(0);">二級選單13</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javescript:void(0);">一級選單2</a>
+        <ul class="ul">
+          <li><a href="javescript:void(0);">二級選單21</a></li>
+          <li><a href="javescript:void(0);">二級選單22</a></li>
+          <li><a href="javescript:void(0);">二級選單23</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javescript:void(0);">一級選單3</a>
+        <ul class="ul">
+          <li><a href="javescript:void(0);">二級選單31</a></li>
+          <li><a href="javescript:void(0);">二級選單32</a></li>
+          <li><a href="javescript:void(0);">二級選單33</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

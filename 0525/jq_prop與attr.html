@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      console.log($('.checkbox-1').attr('checked'));
+      console.log($('.checkbox-2').attr('checked'));
+      console.log($('.checkbox-3').attr('checked'));
+      console.log($('.checkbox-1').prop('checked'));
+      console.log($('.checkbox-2').prop('checked'));
+      console.log($('.checkbox-3').prop('checked'));
+    });
+  </script>
+</head>
+
+<body>
+  <input type="checkbox" class="checkbox-1" checked="true" />
+  <input type="checkbox" class="checkbox-2" />
+  <input type="checkbox" class="checkbox-3" checked="false" />
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      x = 0;
+      y = 0;
+      $("div.over").mouseover(function () {
+        $(".over span").text(x += 1);
+      })
+      $("div.enter").mouseenter(function () {
+        $(".enter span").text(y += 1);
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <p>不論滑鼠指標穿過被選元素或其子元素,都會觸發mouseover事件</p>
+  <p>只有在滑鼠指標被穿過被選元素時,才會觸發mouseenter事件</p>
+  <div class="over" style="background-color:lightgray; padding:20px; width:40%; float:left">
+    <h2 style="background-color:white">被觸發的Mouseover事件<span></span></h2>
+  </div>
+  <div class=" enter" style="background-color:lightgray; padding:20px; width:40%; float:right">
+    <h2 style="background-color:white">被觸發的Mouseenter事件<span></span></h2>
+  </div>
+</body>
+
+</html>

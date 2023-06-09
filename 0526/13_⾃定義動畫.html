@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: absolute;
+    }
+
+    #box2 {
+      background-color: blue;
+      margin-top: 150px;
+    }
+
+    #box3 {
+      background-color: yellowgreen;
+      margin-top: 300px;
+    }
+
+  </style>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      $("input").eq(0).click(function () {
+        // {params}: 要執⾏動畫的 CSS 屬性，帶數字(必填)
+        // speed: 執⾏動畫時⻑(可選)
+        // easing: 執⾏效果，預設為swing(緩動) 可以是 linear(均速)
+        // callback: 動畫執⾏完後立即執⾏回調函數(可選)
+        $("#box1").animate({ left: 800 }, 8000);
+        $("#box2").animate({ left: 800 }, 8000, "swing");
+        $("#box3").animate({ left: 800 }, 8000, "linear", function () {
+          console.log("移動完成!");
+        });
+      })
+    });
+  </script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="開始">
+  <input type="button" value="結束">
+  <div id="box1"></div>
+  <div id="box2"></div>
+  <div id="box3"></div>
+
+</body>
+
+</html>

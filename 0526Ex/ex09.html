@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex9</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .parentWrap {
+      width: 200px;
+      text-align: left;
+    }
+
+    .menuGroup {
+      background-color: pink;
+    }
+
+    .groupTitle {
+      display: block;
+      height: 20px;
+      line-height: 20px;
+      font-size: 16px;
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .menuGroup>div {
+      height: 200px;
+      background-color: gray;
+      display: none;
+    }
+
+  </style>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".groupTitle").click(function () {
+        $(this).next().slideDown(200).parent().siblings().children("div").slideUp(200);
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <ul class="parentWrap">
+    <li class="menuGroup">
+      <span class="groupTitle">#1 Macbook</span>
+      <div>BlahBlah</div>
+    </li>
+    <li class="menuGroup">
+      <span class="groupTitle">#2 iPad Mini</span>
+      <div>BlahBlah</div>
+    </li>
+    <li class="menuGroup">
+      <span class="groupTitle">#3 iMac</span>
+      <div>BlahBlah</div>
+    </li>
+    <li class="menuGroup">
+      <span class="groupTitle">#4 Mac Mini</span>
+      <div>BlahBlah</div>
+    </li>
+    <li class="menuGroup">
+      <span class="groupTitle">#5 Macbook Air</span>
+      <div>BlahBlahBlah</div>
+    </li>
+  </ul>
+</body>
+
+</html>

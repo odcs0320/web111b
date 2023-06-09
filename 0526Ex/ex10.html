@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex10</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#add').click(function () {
+        $("ul").append("<li>I am new one</li>")
+      })
+      $('#cls').click(function () {
+        $("li").remove()
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <button id="add">Add</button><button id="cls">Clear</button>
+  <ul>
+    <li>Item *</li>
+    <li>Item *</li>
+    <li>Item *</li>
+    <li>Item *</li>
+    <li>Item *</li>
+  </ul>
+</body>
+
+</html>
